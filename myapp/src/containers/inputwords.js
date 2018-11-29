@@ -2,6 +2,8 @@ import React from 'react'
 import {Button} from 'antd-mobile';
 import emitter from './ev'
 
+
+
 class InputWords extends React.Component{
 
     constructor(props){
@@ -21,15 +23,30 @@ class InputWords extends React.Component{
         }
         return(
             <div className="inputwords" style={inputcss.inputwords}>
-                <input type="text" placeholder="" className="words" style={inputcss.words} value={this.state.inputValue} onChange={this.getValue} />
+                <input type="text" placeholder="" className="words" style={inputcss.words} value={this.state.inputValue} onChange={this.getValue} 
+                onKeyUp={this.sendcontent} />
                 <Button onClick={this.sendmsg(this.state.inputValue)} type="primary" size="small" className="send" style={inputcss.send}>发送</Button>
             </div>
         )
     }
+    sendcontent=(event)=>{
+        if(this.state.inputValue!==''){
+            if(event.keyCode==13){
+                    
+                emitter.emit('callmsg',this.state.inputValue);
+                this.setState({inputValue:''})
+
+            }
+        }
+
+    }
 
     sendmsg=(msg)=>{
-        return ()=>{
-            emitter.emit('callmsg',msg);
+        if(this.state.inputValue!==''){
+            return ()=>{
+                emitter.emit('callmsg',msg);
+                this.setState({inputValue:''})
+            }
         }
         
     }
@@ -38,6 +55,10 @@ class InputWords extends React.Component{
             inputValue : event.target.value
         })
     }
+
+
 }
+
+
 
 export default InputWords
