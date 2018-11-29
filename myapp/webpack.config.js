@@ -37,6 +37,7 @@ module.exports = {
     new webpack.DefinePlugin({
     'process.env.NODE.ENV':"development"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    "import", { libraryName: "antd-mobile", style: "css" }
   ]
 };

@@ -12,7 +12,7 @@ import pic6 from '../images/pic6.jpg'
 var menuGroup = [
     {menupic:pic1,menuname:'weather'},
     {menupic:pic2,menuname:'news'},
-    {menupic:pic3,menuname:'video'},
+    {menupic:pic3,menuname:'movies'},
     {menupic:pic4,menuname:'books'},
     {menupic:pic5,menuname:'others'},
     {menupic:pic6,menuname:'myself'},
