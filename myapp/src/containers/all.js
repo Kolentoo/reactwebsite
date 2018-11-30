@@ -7,6 +7,7 @@ import Login from './login'
 import BasicInputExampleWrapper from './login'
 import Chat from './chat'
 import Myself from './myself'
+import Test from './test'
 
 
 import {Link,Route,BrowserRouter,Switch} from 'react-router-dom'
@@ -14,7 +15,7 @@ import {Link,Route,BrowserRouter,Switch} from 'react-router-dom'
 
 
 class All extends React.Component{
-
+    
     render(){
         return(
             <div className="kolento">
@@ -22,6 +23,7 @@ class All extends React.Component{
                 <BrowserRouter>
                     <div className="content">
                         <Switch>
+                            {/* <Route path='/' component={Test}/> */}
                             <Route path="/login" component={BasicInputExampleWrapper} />
                             <Route path='/chat' component={Chat}/>
                             <Route path='/myself' component={Myself}/>
