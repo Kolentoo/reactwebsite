@@ -1,0 +1,6 @@
+.login {display:flex;justify-content: center;align-items: center;flex-direction: column;height: 90vh;}
+.login-con {width: 370px;}
+.logo-box {margin-bottom:5vh;display:flex;justify-content: center;;}
+.input-con {width: 100%;}
+.input-box .input-list {margin-bottom:20px;}
+.login {margin-top:20px;}
