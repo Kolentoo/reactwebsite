@@ -1,23 +1,22 @@
-import React,{Component} from 'react';
-import { Route,Switch, HashRouter } from 'react-router-dom';
+import React from 'react';
+import { HashRouter } from 'react-router-dom'
+import { renderRoutes } from 'react-router-config';
+//上面三个必不可少的,你可以对照一开始打建的项目路由引入作比较
+//这个文件就是路由分离的文件
+import {routes} from './routeconfig'
 
-import Home from '../pages/home';
-import Login from '../pages/login';
+/*
+HashRouter
+1.用这个了就代表路径加上/#/
+2.换成BrowserRouter了；路径就不需要加/#/
+3.用HashRouter了就要把path的路径名字带上，如果首次加载默认的话要这样写： <Route exact path="/"  component={App}/>
 
-class RouterMap extends Component {
-    constructor(props, context){
-        super(props, context);
-    }
-    render(){
-        return (
-            <HashRouter>
-                <Switch>
-                    <Route path='/' component={Login} exact/>
-                    <Route path='/home' component={Home}/>
-                </Switch>        
-            </HashRouter>
-        )
-    }
-}
+*/
 
-export default RouterMap
+const BasicRoute = () => (
+    <HashRouter >
+        {console.log(renderRoutes)}
+        {renderRoutes(routes)} 
+    </HashRouter>
+);
+export default BasicRoute;
