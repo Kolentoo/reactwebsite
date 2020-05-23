@@ -12,7 +12,7 @@ exports.reducer=(state=initState,action)=>{
             }
         case "showSideBar":
             return {
-                showSideBar:!(state.showSideBar)
+                showSideBar:true
             }
         default:
             return state;

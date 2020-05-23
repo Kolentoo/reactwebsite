@@ -1,0 +1,9 @@
+/* 顶部菜单 */
+.ant-layout-header {padding:0 0 0 55px!important;}
+
+/* 左侧菜单栏 */
+.ant-menu-inline {height: 100vh;}
+
+
+/* layout 内容部分 */
+.ant-layout-content {padding-left:70px!important;}

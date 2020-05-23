@@ -6,7 +6,9 @@ class Detail extends React.Component {
     }
     render(){
         return(
-            <div className="detail">detail page</div>
+            <div className="detail">
+                detail page
+            </div>
         )
     }
 }
