@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 class Demob extends React.Component{
     render(){
         console.log('demob',this.props);
-        return <div className="result">{this.props.count}</div>
+    return <div className="result">{this.props.count}{this.props.showLayout}</div>
     }
 }
 

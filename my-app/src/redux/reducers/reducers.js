@@ -1,7 +1,9 @@
 const initState = {
     count:0,//demoa与demob测试react-redux用
-    showSideBar:false
+    showLayout:false,
+    currentBread:'首页'
 }
+let current = localStorage.getItem('currentBread');
 
 exports.reducer=(state=initState,action)=>{
     console.log('reducer',action);
@@ -10,9 +12,21 @@ exports.reducer=(state=initState,action)=>{
             return {
                 count:state.count + 1
             }
-        case "showSideBar":
+        case "reduce_action":
             return {
-                showSideBar:true
+                count:state.count - 1
+            }
+        case "showLayout":
+            return {
+                showLayout:true
+            }
+        case "hideLayout":
+            return {
+                showLayout:false
+            }
+        case "currentBread":
+            return {
+                currentBread:current
             }
         default:
             return state;

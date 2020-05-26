@@ -1,9 +1,19 @@
+/* layout布局css */
+#components-layout-demo-side .logo {
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 16px;
+}
+  
+.site-layout .site-layout-background {
+    background: #fff;
+}
+
 /* 顶部菜单 */
 .ant-layout-header {padding:0 0 0 55px!important;}
 
 /* 左侧菜单栏 */
-.ant-menu-inline {height: 100vh;}
+.ant-menu-inline {max-height: 100vh;}
 
 
 /* layout 内容部分 */
-.ant-layout-content {padding-left:70px!important;}

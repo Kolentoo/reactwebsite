@@ -47,10 +47,11 @@ class Login extends React.Component {
         if(this.state.userName){
             console.log(this.state.password.length)
             if(this.state.password&&this.state.password.length>=6){
+
                 message.info('登录成功');
                 this.props.history.push('/home');
                 this.props.sendAction();
-                localStorage.setItem('authority','on');
+
             }else if(this.state.password&&this.state.password.length<6){
                 message.info('密码强度不够');
             }else{
@@ -75,7 +76,6 @@ class Login extends React.Component {
 
     }
     componentDidMount(){
-        localStorage.setItem('authority','off');
         console.log('login-props',this.props);
     }
 
@@ -85,7 +85,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         sendAction: () => {
             dispatch({
-                type:"showSideBar"
+                type:"showLayout"
             })
         }
     }

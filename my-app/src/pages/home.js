@@ -9,12 +9,16 @@ class Home extends React.Component{
         // this.state=this.props
         // console.log(props)
     }
+    goback =()=>{
+        this.props.history.push('/')
+    }
     render(){
         console.log('home')
         return(
-            <div className="home">
+            <div className="home" onClick={this.goback}>
 
-                home page
+                home page.............
+
                 {
                     // this.props.route.map((item,index)=>{
                     //     console.log(item.path)

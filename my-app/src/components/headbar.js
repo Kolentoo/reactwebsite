@@ -1,5 +1,7 @@
 import React from 'react';
-import { Menu } from 'antd';
+import { Menu, Switch } from 'antd';
+import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
@@ -14,16 +16,28 @@ class HearBar extends React.Component {
     this.setState({
       current: e.key,
     });
+    if(e.key==='loginOut'){
+      this.props.history.push('/');
+      this.props.sendAction();
+      this.setState({});//redux 驱动视图
+    }else if(e.key==='demoa'){
+      this.props.history.push('/demoa');
+    }else if(e.key==='demob'){
+      this.props.history.push('/demob');
+    }else{
+
+    }
+    
   };
 
   render() {
     return (
       <Menu onClick={this.handleClick} selectedKeys={[this.state.current]} mode="horizontal">
-        <Menu.Item key="mail" icon={<MailOutlined />}>
-          消息
+        <Menu.Item key="demoa" icon={<MailOutlined />}>
+          demoa
         </Menu.Item>
-        <Menu.Item key="app" disabled icon={<AppstoreOutlined />}>
-          发现
+        <Menu.Item key="demob" icon={<AppstoreOutlined />}>
+          demob
         </Menu.Item>
         <SubMenu icon={<SettingOutlined />} title="设置">
           <Menu.ItemGroup title="Item 1">
@@ -35,14 +49,23 @@ class HearBar extends React.Component {
             <Menu.Item key="setting:4">Option 4</Menu.Item>
           </Menu.ItemGroup>
         </SubMenu>
-        <Menu.Item key="alipay">
-          <a href="https://ant.design" target="_blank" rel="noopener noreferrer">
-            关于Kolento
-          </a>
+        <Menu.Item key="loginOut">
+            退出
         </Menu.Item>
       </Menu>
     );
   }
 }
 
-export default HearBar;
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+      sendAction: () => {
+          dispatch({
+              type:"hideLayout"
+          })
+      }
+  }
+}
+
+export default connect(null,mapDispatchToProps)(withRouter(HearBar));

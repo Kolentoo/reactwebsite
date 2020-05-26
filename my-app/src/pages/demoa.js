@@ -7,8 +7,22 @@ class demoA extends React.Component{
     this.props.sendAction();
     this.setState({})//使得react页面视图发生变化
   }
+  reduceValue = () =>{
+    console.log('demoa',this.props);
+    this.props.changeAction();
+    this.setState({})//使得react页面视图发生变化
+  }
+  goDemob = ()=>{
+    this.props.history.push('/demob')
+  }
   render(){
-    return <button onClick={this.handleClick}> add </button>
+    return (
+      <div className="test">
+        <button onClick={this.handleClick}> add </button>
+        <button onClick={this.reduceValue}> 减少 </button>
+        <button onClick={this.goDemob}>跳转到demob</button>
+      </div>
+    )
   }
 }
 
@@ -19,7 +33,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
           dispatch({
               type:"add_action"
           })
-      }
+      },
+      changeAction: () => {
+        dispatch({
+            type:"reduce_action"
+        })
+    }
   }
 }
 export default connect(null,mapDispatchToProps)(demoA);

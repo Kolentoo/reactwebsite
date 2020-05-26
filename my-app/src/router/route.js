@@ -1,6 +1,13 @@
 import React from 'react';
 import { HashRouter,Route,Switch } from 'react-router-dom'
 import routeconfig from './routeconfig'
+import LifeCycleComponent from './routeEach'
+
+import SiderBar from '../components/sider';
+import HeadBar from '../components/headbar';
+import { Layout } from 'antd';
+const { Header, Footer, Sider, Content } = Layout;
+
 // import { renderRoutes } from 'react-router-config';
 //上面三个必不可少的,你可以对照一开始打建的项目路由引入作比较
 //这个文件就是路由分离的文件
@@ -22,27 +29,29 @@ HashRouter
 // );
 // export default BasicRoute;
 
+
+
+
 class RouteBox extends React.Component{
+    constructor(props){
+        super(props)
+    }
     render(){
         return(
             <HashRouter>
                 <Switch>
-                    {   
-                        routeconfig.map((item,index)=>{
-                            if(item.path=='Login'){
-                                localStorage.setItem('authority','off');
-                            }else{
-                                localStorage.setItem('authority','on');
+                {   
+                    routeconfig.map((item,index)=>{
+                        return item.component?<Route key={index} path={item.path}>
+                            {
+                                (props)=>{return <LifeCycleComponent {...props} Item={item}/> }
                             }
-                            return item.component?<Route key={index} path={item.path} component={item.component} >
-                                {/* {
-                                    (props)=>{return <item.component route={item.children}/> }
-                                } */}
-                            </Route>:''
-                        })
-                    }
+                        </Route>:''
+                    })
+                }
                 </Switch>
             </HashRouter>
+
         )
     }
 

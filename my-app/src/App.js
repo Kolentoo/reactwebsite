@@ -7,11 +7,8 @@ import Content from './pages/content';
 
 // 引入antdesign样式
 import 'antd/dist/antd.css';
-import {
-  Route
-} from 'react-router-dom'
 
-
+import { HashRouter ,Route,Switch,withRouter } from 'react-router-dom';
 
 // react-redux相关
 import { Provider } from "react-redux";
@@ -32,7 +29,8 @@ class App extends React.Component{
   render(){
     return (
       <Provider store={store}>
-        <Content />
+        <Content></Content>
+        
       </Provider>
     );
   }

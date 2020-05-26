@@ -5,13 +5,27 @@ import Detail from '../pages/detail/detail';
 import Demoa from '../pages/demoa'
 import Demob from '../pages/demob'
 
+import Movie from '../pages/movie/movie'
+
 
 console.log('Login',Login)
 let routerconfig = [
     {
+        path: '/movie',
+        component:Movie ,
+        name:"电影",
+        exact:true,
+    },
+    {
         path: '/demob',
         component:Demob ,
-        name:"demob",
+        name:"案例demob",
+        exact:true,
+    },
+    {
+        path: '/demoa',
+        component:Demoa ,
+        name:"案例demoa",
         exact:true,
     },
     {
