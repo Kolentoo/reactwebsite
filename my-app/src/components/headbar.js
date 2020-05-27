@@ -2,7 +2,7 @@ import React from 'react';
 import { Menu, Switch } from 'antd';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons';
+import { MailOutlined, AppstoreOutlined, SettingOutlined,HomeOutlined } from '@ant-design/icons';
 
 const { SubMenu } = Menu;
 

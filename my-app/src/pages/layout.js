@@ -5,12 +5,15 @@ import HeadBar from '../components/headbar'
 import { Layout, Menu, Breadcrumb } from 'antd';
 import { withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
+import k  from '../images/K.jpg'
 import {
   DesktopOutlined,
   PieChartOutlined,
   FileOutlined,
   TeamOutlined,
   UserOutlined,
+  HomeOutlined,
+  RadarChartOutlined
 } from '@ant-design/icons';
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -36,10 +39,15 @@ class LayoutBox extends React.Component {
   goPage=(e)=>{
     console.log('click ', e);
     switch (e.key) {
-      case '1':
+      case 'home':
+        this.props.history.push('/home');
+        break;
+      case 'movie':
         this.props.history.push('/movie');
         break;
-    
+      case 'parent':
+        this.props.history.push('/parent');
+        break;
       default:
         break;
     }
@@ -49,21 +57,30 @@ class LayoutBox extends React.Component {
     console.log('testprops',this.props)
     return (
       <Layout style={{ minHeight: '100vh' }}>
-        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" onClick={this.goPage}>
-            <Menu.Item key="1" icon={<PieChartOutlined />}>
+        <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse} theme="light">
+          {
+            !this.state.collapsed?<div className="logo" >
+              <img className="g10 vm" src={k} alt=""/>
+            </div>:''
+          }
+
+          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" onClick={this.goPage} theme="light">
+            <Menu.Item key="home" icon={<HomeOutlined />}>
+              首页
+            </Menu.Item>
+            <Menu.Item key="movie" icon={<PieChartOutlined />}>
               电影
             </Menu.Item>
-            <Menu.Item key="2" icon={<DesktopOutlined />}>
-              Option 2
+            <Menu.Item key="parent" icon={<RadarChartOutlined />}>
+              组件传值
             </Menu.Item>
-            <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+
+            <SubMenu key="sub1" icon={<UserOutlined />} title="介绍">
               <Menu.Item key="3">Tom</Menu.Item>
               <Menu.Item key="4">Bill</Menu.Item>
               <Menu.Item key="5">Alex</Menu.Item>
             </SubMenu>
-            <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+            <SubMenu key="sub2" icon={<TeamOutlined />} title="其他">
               <Menu.Item key="6">Team 1</Menu.Item>
               <Menu.Item key="8">Team 2</Menu.Item>
             </SubMenu>

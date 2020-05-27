@@ -4,6 +4,8 @@ import Home from '../pages/home';
 import Detail from '../pages/detail/detail';
 import Demoa from '../pages/demoa'
 import Demob from '../pages/demob'
+import Children from '../pages/parent/children';
+import Parent from '../pages/parent/parent';
 
 import Movie from '../pages/movie/movie'
 
@@ -14,6 +16,12 @@ let routerconfig = [
         path: '/movie',
         component:Movie ,
         name:"电影",
+        exact:true,
+    },
+    {
+        path: '/parent',
+        component:Parent ,
+        name:"父子组件传值",
         exact:true,
     },
     {
@@ -31,7 +39,7 @@ let routerconfig = [
     {
         path: '/home',
         component:Home ,
-        name:"home",
+        name:"首页",
         exact:true,
         children: [
             { path: "/home/detail", component: Detail, exact:true },
@@ -41,7 +49,7 @@ let routerconfig = [
     {
         path: '/',
         component:Login ,
-        name:"login",
+        name:"登录",
         exact:true
     },
 ];

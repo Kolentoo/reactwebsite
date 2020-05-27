@@ -16,4 +16,13 @@
 .ant-menu-inline {max-height: 100vh;}
 
 
-/* layout 内容部分 */
+/* 电影 */
+.movie-top {margin:0;padding:0;}
+.movie-list {width: 120px;text-align: center;margin:0 12px 20px;}
+.movie-list .chart { border-radius:10px; -webkit-border-radius:10px; -moz-border-radius:10px; -ms-border-radius:10px; -o-border-radius:10px;
+overflow: hidden;}
+.movie-list .chart img{object-fit: cover;height: 160px;}
+.score-box {display:flex;justify-content: center;align-items: center;color:#52c41a;font-size:16px;}
+.score-box .star {width: 80px;}
+
+.ant-layout-header .ant-menu {float:right;width:400px;}

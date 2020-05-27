@@ -1,0 +1,31 @@
+
+/* css reset */
+p{margin:0!important;padding:0;}
+li {list-style: none;}
+.sy {font-family:'Source Han Sans CN';}
+.pf {font-family: PingFangTC-Light, sans-serif;}
+.g10 {width: 100%;}
+.vm {vertical-align:middle;}
+.hide {display: none !important;}
+.yahei {font-family: 'Microsoft Yahei';}
+.tc {text-align: center;}
+.vm {vertical-align: middle}
+.block {display: block;}
+.b {font-weight:bold;}
+.fl {float:left;}
+.fr {float:right;}
+.dib {display: inline-block;}
+.pointer {cursor: pointer;}
+.clearfix:after,.clearfix:before{content:" ";display:table}.clearfix:after{clear:both}
+:-moz-placeholder {color:#B4B4B4;}
+::-moz-placeholder {color:#B4B4B4;}
+input {-webkit-appearance: none;}
+input:-ms-input-placeholder{color:#B4B4B4;}
+input::-webkit-input-placeholder{color:#B4B4B4;}
+textarea:-ms-input-placeholder{color:#B4B4B4;}
+textarea::-webkit-input-placeholder{color:#B4B4B4;}
+.vh {visibility:hidden;}
+i {font-style: normal;}
+
+/* other global css */
+.logo img{width: 30px;margin:16px 0 18px 22px;display: block;}
