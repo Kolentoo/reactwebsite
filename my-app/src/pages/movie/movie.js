@@ -10,8 +10,8 @@ class Movie extends React.Component{
     }
   }
   componentWillMount(){
-    // this.getDetail();
-    this.getTopMovie();
+    this.getDetail();
+    // this.getTopMovie();
   }
   componentWillUnmount(){
     // 防止警告报错 组件卸载前处理
@@ -21,7 +21,7 @@ class Movie extends React.Component{
   }
   getDetail=()=>{
     // 需要后台做转发接口代理才能跨域访问部分接口
-    fetch('https://api.douban.com/v2/movie/subject/26942674?apikey=0b2bdeda43b5688921839c8ecb20399b',{
+    fetch('https://douban.uieee.com/v2/movie/subject/26942674?apikey=0df993c66c0c636e29ecbb5344252a4a',{
 
     }).then((response)=> {
       return response.json();
